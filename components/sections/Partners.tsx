@@ -22,7 +22,7 @@ const Partners = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: false }}
-                    className={`font-extrabold sm:text-6xl text-4xl mt-15   uppercase ${inter.className}`}
+                    className={`font-extrabold sm:text-6xl text-4xl mt-15 uppercase ${inter.className}`}
                 >
                     Partnyorlarımız
                 </motion.h2>

@@ -50,13 +50,13 @@ const Publications = () => {
             </div>
             <motion.div className="w-[70%] mx-auto">
                 <Carousel
-                    // opts={{
-                    //     align: "start",
-                    //     loop: true,
-                    // }}
-                    // plugins={[
-                    //     autoplay.current
-                    // ]}
+                    opts={{
+                        align: "start",
+                        loop: true,
+                    }}
+                    plugins={[
+                        autoplay.current
+                    ]}
                 >
                     <CarouselContent className="-ml-1">
                         {publications.map((edition, index) => (
