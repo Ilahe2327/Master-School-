@@ -1,0 +1,64 @@
+'use client'
+
+import React from 'react'
+import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion"
+import {
+    Card,
+    CardAction,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
+import Image from 'next/image'
+import { inter } from '../layout/Navbar'
+const Partners = () => {
+    return (
+        <div className='grid grid-cols-9 items-center w-[90%] mx-auto min-h-[80vh]'>
+            <div className={`${inter.className} mx-20 col-span-5 `}>
+                <motion.p
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: false }}
+                    className='text-6xl uppercase font-black p-2'
+                    style={{
+                        background: 'radial-gradient(circle, #091057, #070F2B, #091057, #091057)',
+                        backgroundSize: '200% auto',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundClip: 'text',
+                        animation: 'textShine 6s linear infinite'  // burda sadəcə animation timing
+                    }}
+                >
+                    Partnyorlarımız
+                </motion.p>
+                <p className={`${inter.className} text-white p-4 w-4/5`}>Keyfiyyətli təhsil təcrübəsini təmin etmək üçün sənayenin öndə gedən qurumları və universitetləri ilə əməkdaşlıq edirik.</p>
+            </div>
+            <div className='col-span-4 flex'>
+                <div className='w-1/2'>
+                    <Image
+                        src="/emekdas/bdu.webp"
+                        alt="BDU"
+                        width={800}
+                        height={800}
+                        className=" z-20 w-53 h-53 object-cover  dark:brightness-40"
+                    />
+                </div>
+                <div className='w-1/2'>
+                    <Image
+                        src="/emekdas/unec.webp"
+                        alt="BDU"
+                        width={800}
+                        height={800}
+                        className=" z-20 w-53 h-53 object-cover rounded-full dark:brightness-40"
+                    />
+                    {/* <h1>UNEC</h1> */}
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Partners

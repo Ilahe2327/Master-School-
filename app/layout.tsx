@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import NavbarSection from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+// import BackgroundWrapper from "@/components/layout/BackgroundWrapper";
+// import Background from "@/components/layout/Background";
+// import dynamic from "next/dynamic";
+import BackgroundWrapper from "@/components/layout/BackgroundWrapper";
+// const Background = dynamic(() => import('@/components/layout/Background'), { ssr: false })
+ 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +32,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} gradientBackground`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <BackgroundWrapper />
+          {/* <div className="relative z-10 gradientBackground"> */}
+          <NavbarSection />
+          {children}
+          <Footer />
+          {/* </div> */}
+        </ThemeProvider>
       </body>
     </html>
   );
