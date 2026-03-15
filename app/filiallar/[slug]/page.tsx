@@ -6,7 +6,8 @@ import { Button } from '@/components/ui/button'
 import { branchData, branches } from '@/data/branchData/data'
 import { BadgeCheck, MapPin, PhoneCall } from 'lucide-react'
 import Image from 'next/image'
-import { notFound } from 'next/navigation'
+import Link from 'next/link'
+import { notFound, useRouter } from 'next/navigation'
 import React, { useRef, useState } from 'react'
 
 
@@ -28,11 +29,11 @@ const FilialDetail = (props: BranchDetailProps) => {
         <>
             <div className='flex flex-col container mx-auto w-full text-taupe-900 '>
                 <div className={`${inter.className} flex flex-col my-20 items-center justify-center gap-5`}>
-                    <h1 className='text-7xl font-extrabold'>{branchDetail.title} Filialı</h1>
+                    <h1 className='text-6xl md:text-7xl  font-extrabold'>{branchDetail.title} Filialı</h1>
                     <p className='flex text-black gap-1' ><MapPin />  MasterSchool Təhsil Mərkəzi</p>
                 </div>
-                <div className='flex w-full h-auto p-10 bg-white rounded-2xl mt-10'>
-                    <div className='w-1/2 p-15'>
+                <div className='flex lg:flex-row flex-col-reverse w-full h-auto p-10 bg-white rounded-2xl mt-10'>
+                    <div className='w-full lg:w-1/2 sm:p-15 p-5'>
                         <div className={`w-full flex flex-col justify-center items-start gap-3 text-xl ${inter.className}`} >
                             <h1 className='text-4xl text-blue-900 font-extrabold w-full text-center'>{branchDetail.title} filialı</h1>
                             <div className='mt-10 flex flex-col gap-2'>
@@ -50,41 +51,41 @@ const FilialDetail = (props: BranchDetailProps) => {
                             </div>
                         </div>
                     </div>
-                    <div className='w-1/2  flex flex-col gap-2'>
+                    <div className='w-full lg:w-1/2  flex flex-col gap-2'>
                         <div className='w-full'>
                             <Image src={branchDetail.images[0].image} alt={'Əsas filial şəkli'} width={branchDetail.images[0].width} height={branchDetail.images[0].height} className='w-full h-[500px] rounded object-cover' />
                         </div>
                     </div>
                 </div>
-                <div className='w-[90%] mx-auto my-20 flex'>
-                    <div className='w-1/2'>
-                        <Image src={branchDetail.images[1].image} alt={'Miniatur1'} width={branchDetail.images[1].width} height={branchDetail.images[1].height} className='w-[950px] h-[500px] object-cover rounded-2xl border-4' />
+                <div className='w-[90%] mx-auto my-20 flex flex-col lg:flex-row gap-10'>
+                    <div className='w-full lg:w-1/2'>
+                        <Image src={branchDetail.images[1].image} alt={'Miniatur1'} width={branchDetail.images[1].width} height={branchDetail.images[1].height} className='w-[950px] h-[370px] lg:h-[500px] object-cover rounded-2xl border-4' />
                     </div>
-                    <div className='w-1/2 flex items-center justify-center'>
-                        <div className={`${inter.className} bg-white py-10 px-20 rounded-2xl`}>
+                    <div className='w-full lg:w-1/2 mt-10 lg:mt-0 flex items-center justify-center'>
+                        <div className={`${inter.className} bg-white w-full lg:w-4/5 py-5 lg:py-5  lg:px-20 rounded-2xl flex flex-col justify-center items-center`}>
                             <div className='w-full p-5 flex justify-center items-center'> <PhoneCall size={80} /></div>
                             <p className=' text-2xl my-3 font-black text-center'>Əlavə sualınız var?</p>
-                            <Button className='text-2xl bg-[#3572EF] p-7 mt-3 cursor-pointer hover:bg-[#285acd]'>Bizimlə əlaqə saxla</Button>
+                            <Link href={'/#contact'}><Button className='text-2xl bg-[#3572EF] p-7 mt-3 cursor-pointer hover:bg-[#285acd]'>Bizimlə əlaqə saxla</Button></Link>
                         </div>
                     </div>
                 </div>
-                <div className='w-[100%] mx-auto my-20 flex flex-col  gap-5'>
-                    <div ref={sectionRef} className='w-[80%] mx-auto my-10 bg-transparent border-4 border-white rounded-2xl'>
-                        <div className='w-full bg-[#3572EF] p-5 pl-10 text-2xl text-white font-bold rounded-2xl'>
+                <div className='w-[100%] mx-auto my-5 flex flex-col  gap-5'>
+                    <div ref={sectionRef} className='w-[80%] mx-auto my-3 md:my-10 bg-transparent border-4 border-white rounded-2xl'>
+                        <div className='w-full bg-[#3572EF] p-5 pl-10 text-xl lg:text-2xl text-white font-bold rounded-2xl'>
                             <h1>{branchData[active].title}</h1>
                         </div>
-                        <div className='px-30 py-10 text-white'>
+                        <div className='px-5 sm:px-10 lg:px-30 py-10 text-white text-left'>
                             <ul>
                                 {
                                     branchData[active].items.map((item, index) => (
-                                        <li key={index} className='text-xl flex gap-2 font-bold'><BadgeCheck />{item}</li>
+                                        <li key={index} className='text-sm sm:text-lg mb-2 lg:text-xl flex gap-2 font-bold'><BadgeCheck />{item}</li>
                                     ))
                                 }
                             </ul>
                         </div>
                     </div>
-                    <div className='flex w-full items-center justify-between '>
-                        <div className='w-1/2 flex mr-5 flex-col items-center justify-center'>
+                    <div className='flex flex-col lg:flex-row w-full gap-10 lg:gap-5 items-center justify-between '>
+                        <div className='w-full lg:w-1/2 flex flex-col items-center justify-center'>
                             <div className={`${inter.className} bg-[#ffffff] w-full py-5 px-3 mx-auto rounded-2xl`}>
                                 {
                                     branchData.map((data, index) => (
@@ -93,12 +94,12 @@ const FilialDetail = (props: BranchDetailProps) => {
                                             sectionRef.current?.scrollIntoView({
                                                 behavior: "smooth"
                                             });
-                                        }} className={`bg-[#eaf6ff] text-taupe-900 mx-auto p-6 w-[95%] text-left flex items-center justify-start cursor-pointer ${active == data.id - 1 ? 'border-[#3572EF] border-2 shadow-2xl' : ''} `}>{data.title}</Button>
+                                        }} className={`bg-[#eaf6ff] text-taupe-900 mx-auto p-6 w-[95%] text-left text-[10px] sm:text-sm lg:text-sm flex items-center justify-start cursor-pointer ${active == data.id - 1 ? 'border-[#3572EF] border-2 shadow-2xl' : ''} `}>{data.title}</Button>
                                     ))
                                 }
                             </div>
                         </div>
-                        <div className='w-1/2 flex items-start'> <Image src={branchDetail.images[2].image} alt={'Miniatur2'} width={branchDetail.images[2].width} height={branchDetail.images[2].height} className='w-[950] h-[500px] object-cover rounded-2xl border-4' /></div>
+                        <div className='w-full lg:w-1/2 flex items-start'> <Image src={branchDetail.images[2].image} alt={'Miniatur2'} width={branchDetail.images[2].width} height={branchDetail.images[2].height} className='w-full h-[500px] object-cover rounded-2xl border-4' /></div>
                     </div>
                 </div>
 

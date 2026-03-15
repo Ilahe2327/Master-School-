@@ -1,13 +1,13 @@
 .aboutSection {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
+    /* position: relative; */
+    /* width: 100%; */
+    /* height: 100vh; */
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    padding: 0 2rem;
-
+    padding: 0 2rem; */
+    /* margin-top: 8rem; */
     /* YUMŞAQ OVERLAY ARXA FON */
     background: linear-gradient(to bottom,
     transparent,
@@ -33,6 +33,6 @@
 .aboutCardBgImage {
     background: linear-gradient(125deg, #88b8e9, #82adee, #d4e7ff, #7fccf9, #1c3a4c);
     height: auto;
-    padding: 5px;
-    border-radius: 40px;
+    /* padding: 5px; */
+    /* border-radius: 40px; */
 }

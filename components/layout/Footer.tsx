@@ -9,9 +9,9 @@ const Footer = () => {
     <footer className="w-full h-auto pt-10" style={{
       background: 'linear-gradient(135deg, rgba(0, 0, 4, 0.8), rgba(0, 0, 3, 0.7)'
     }}>
-      <div className='container mx-auto py-12 px-4 grid grid-cols-1 place-items-start text-center sm:text-left sm:grid-cols-2 lg:grid-cols-9 gap-8'>
+      <div className='container mx-auto py-12 px-4 grid place-items-center sm:place-items-start text-center sm:text-left grid-cols-1 sm:grid-cols-2 lg:grid-cols-9 gap-8'>
 
-        <div className='lg:col-span-3'>
+        <div className='lg:col-span-3 col-span-1 place-content-center place-items-center'>
           <Image
             src='/logo.png'
             alt='Header Logo'
@@ -20,10 +20,10 @@ const Footer = () => {
             className='rounded-xl w-[240px] object-cover lg:col-span-2 mb-5'
             style={{ objectFit: 'cover' }}
           />
-          <p className='text-white text-sm w-4/5'> Biz tələbələrə müasir texnologiyaları öyrənmək və karyera inkişafını irəli aparmaq üçün lazım olan bütün vasitələri təqdim edirik.</p>
+          <p className={`text-white text-sm w-4/5 ${inter.className}`}> Biz tələbələrə müasir texnologiyaları öyrənmək və karyera inkişafını irəli aparmaq üçün lazım olan bütün vasitələri təqdim edirik.</p>
         </div>
         <div className={`lg:col-span-2 mt-10 text-taupe-50 ${inter.className} text-sm gap-2`}>
-          <div className='flex flex-col gap-1'>
+          <div className='flex flex-col justify-center gap-1'>
             <h1 className={`text-taupe-50 ${inter.className} font-semibold text-xl gap-1`}>Sürətli keçidlər</h1>
             <Link href={'#aboutSection'}>Haqqımızda</Link>
             <Link href={'#services'}>Xidmətlər</Link>
@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
         </div>
         <div className={`lg:col-span-2 mt-10 text-taupe-50 ${inter.className} text-sm gap-2`}>
-          <div className='flex flex-col w-[80%] gap-1'>
+          <div className='flex flex-col w-[80%] mx-auto gap-1'>
             <h1 className={`text-taupe-50 ${inter.className} font-semibold text-xl gap-1`}>Əlaqə
             </h1>
             <Link href={'#'}>070 710 33 43</Link>

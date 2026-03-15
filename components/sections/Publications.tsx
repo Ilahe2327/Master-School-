@@ -25,7 +25,7 @@ const Publications = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: false }}
-                    className='text-6xl uppercase font-black p-2'
+                    className='sm:text-6xl text-4xl uppercase font-black p-2'
                     style={{
                         background: 'radial-gradient(circle, #091057, #070F2B, #091057, #091057)',
                         backgroundSize: '200% auto',
@@ -50,26 +50,26 @@ const Publications = () => {
             </div>
             <motion.div className="w-[70%] mx-auto">
                 <Carousel
-                    opts={{
-                        align: "start",
-                        loop: true,
-                    }}
-                    plugins={[
-                        autoplay.current
-                    ]}
+                    // opts={{
+                    //     align: "start",
+                    //     loop: true,
+                    // }}
+                    // plugins={[
+                    //     autoplay.current
+                    // ]}
                 >
                     <CarouselContent className="-ml-1">
                         {publications.map((edition, index) => (
                             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                                 <div className="">
-                                    <Card className="min-h-[430px]">
+                                    <Card className="min-h-[430px] max-h-[450px]">
                                         <CardContent className="w-full h-full flex flex-col gap-3 aspect-square items-center justify-center">
-                                            <div className="min-h-auto py-5 border rounded-2xl border-[#518df4]">
+                                            <div className="publicCardContent min-h-auto max-h-auto mt-15 sm:mt-10 lg:mt-10 xl:mt-2 py-5 border rounded-2xl border-[#518df4]">
                                                 <Image src={edition.image} alt="Nəşrlər" width={1080} height={1350} className="h-[240px] object-cover" />
                                             </div>
-                                            <div className="min-h-[0px] w-full">
+                                            <div className="min-h-[0px]  w-full">
                                                 <p className={`${inter.className} text-center max-h-6 mb-3 font-black text-2xl`}>{edition.name}</p>
-                                                <p className={`${roboto.className} text-center bg-[#518df4] p-2 px-6 w-full mt-5 rounded font-bold text-lg`}>
+                                                <p className={`${roboto.className} text-center bg-[#518df4] p-2 px-6 w-full mt-3 rounded font-bold text-sm sm:text-sm xl:text-lg`}>
                                                     {edition.description}
                                                 </p>
                                             </div>

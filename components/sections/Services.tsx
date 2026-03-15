@@ -60,7 +60,7 @@ const cards: Card[] = [
 const ServicesSection = () => {
 
   return (
-    <div className='relative'>
+    <div id='services' className='relative'>
       <div className="fixed inset-0 -z-10 gradientShift" />
       <div className={`${inter.className} flex justify-center gap-3 items-center flex-col h-auto p-10 text-white`}>
         <motion.p
@@ -68,7 +68,7 @@ const ServicesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false }}
-          className='text-7xl font-black p-2'
+          className='md:text-7xl text-4xl sm:text-5xl font-black p-2'
           style={{
             background: 'radial-gradient(circle, #091057, #070F2B, #091057, #091057)',
             backgroundSize: '200% auto',
@@ -85,7 +85,7 @@ const ServicesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false }}
-          className={`font-extrabold text-5xl ${inter.className} mt-7`}
+          className={`font-extrabold text-2xl sm:text-3xl md:text-5xl  ${inter.className} mt-7`}
         >
           NƏ TƏKLİF EDİRİK
         </motion.h2>
@@ -95,6 +95,7 @@ const ServicesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false }}
+          className='text-center'
         >
           Tələbələrimizə ən yaxşı təhsil xidmətlərini təqdim edirik
         </motion.p>
@@ -103,7 +104,7 @@ const ServicesSection = () => {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         // transition={{ duration:0.8, delay: 0.05 }}
-        className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14 container mx-auto mt-15 w-full'
+        className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14 lg:container w-[95%] mx-auto mt-15 lg:w-full'
         style={{
           transition: 'all ease-in-out 0.09'
         }}

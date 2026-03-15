@@ -26,7 +26,7 @@ const BranchesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false }}
-          className={`font-black text-6xl my-3   uppercase ${inter.className}`}
+          className={`font-black sm:text-6xl text-4xl my-3   uppercase ${inter.className}`}
           style={{
             background: 'radial-gradient(circle, #091057, #070F2B, #091057, #091057)',
             backgroundSize: '200% auto',

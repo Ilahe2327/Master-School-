@@ -9,7 +9,7 @@ import Footer from "@/components/layout/Footer";
 // import dynamic from "next/dynamic";
 import BackgroundWrapper from "@/components/layout/BackgroundWrapper";
 // const Background = dynamic(() => import('@/components/layout/Background'), { ssr: false })
- 
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

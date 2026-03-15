@@ -25,7 +25,7 @@ const TeamSection = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: false }}
-                    className={`font-extrabold text-5xl mt-15  uppercase ${inter.className}`}
+                    className={`font-extrabold sm:text-6xl text-4xl mt-15 text-center  uppercase ${inter.className}`}
                 >
                     Bizim Komanda
                 </motion.h2>
@@ -35,6 +35,7 @@ const TeamSection = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: false }}
+                    className="text-center"
                 >
                     Peşəkar və təcrübəli mütəxəssislərdən ibarət komandamız sizə ən yaxşı xidməti təqdim etməyə hazırdır.
                 </motion.p>
@@ -63,7 +64,7 @@ const TeamSection = () => {
                                                 className="w-full h-full rounded-t-xl object-cover"
                                             />
                                             <CardFooter className='w-full '>
-                                                <p className={`${roboto.className} text-center max-h-6 font-bold text-xl`}>{img.name}</p>
+                                                <p className={`${roboto.className} text-center max-h-6 font-bold sm:text-xl text-lg `}>{img.name}</p>
                                             </CardFooter>
                                         </CardContent>
                                     </Card>

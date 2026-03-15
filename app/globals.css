@@ -10,6 +10,7 @@
   background: linear-gradient(125deg, #3572EF, #3572EF, #2d64b6, #518df4);
   min-height: 100vh;
   z-index: -50;
+  width: 100%;
 }
 
 .overlay {
@@ -27,6 +28,31 @@
   align-items: start;
   justify-content: center;
   flex-direction: column;
+}
+
+@media (max-width:540px) {
+  .publicCardContent {
+    margin-top: 10px;
+  }
+
+}
+
+@media (max-width:767px) {
+  .publicCardContent {
+    margin-top: -90px;
+  }
+}
+
+@media (max-width:630px) {
+  .publicCardContent {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width:344px) {
+  .publicCardContent {
+    margin-top: 50px;
+  }
 }
 
 @keyframes gradientShift {
