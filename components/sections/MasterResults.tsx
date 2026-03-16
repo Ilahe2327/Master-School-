@@ -16,10 +16,12 @@ import Autoplay from "embla-carousel-autoplay"
 import Link from "next/link"
 import { branches } from "@/data/branchData/data"
 import { Button } from "../ui/button"
+import { useTranslations } from "next-intl"
 
 const MasterResults = () => {
     // const masterNeticeler = Array.from({ length: 8 }, (_, index) => { index + 1 !== 2 && `/masterNeticeler/img${index + 1}.webp` })
     const masterNeticeler = Array.from({ length: 8 }, (_, index) => `/magistrNeticeler/img${index + 2}.webp`)
+    const t = useTranslations('MasterResults')
     return (
         <div className='flex flex-col items-center'>
             <div className={`${inter.className} flex justify-center gap-3 text-center items-center flex-col h-auto md:p-10 py-10 text-white`}>
@@ -30,7 +32,7 @@ const MasterResults = () => {
                     viewport={{ once: false }}
                     className={`font-extrabold sm:text-6xl text-4xl mt-15  uppercase ${inter.className}`}
                 >
-                    Magistratura Nəticələrimiz
+                    {t("title")}
                 </motion.h2>
 
                 <motion.p
@@ -39,7 +41,7 @@ const MasterResults = () => {
                     transition={{ duration: 0.6 }}
                     viewport={{ once: false }}
                 >
-                    Kursumuzun olmazsa olmazı yüksək magistratura nəticələrimiz
+                    {t('description')}
                 </motion.p>
             </div>
 

@@ -17,27 +17,65 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { inter, roboto } from "../layout/Navbar"
-const bugReportSchema = z.object({
+import { useLocale, useTranslations } from "next-intl"
 
-  name: z.string()
-    .min(3, "Soyad ən az 3 hərfdən ibarət olmalıdı."),
-  lastName: z.string()
-    .min(3, "Soyad ən az 3 hərfdən ibarət olmalıdı."),
-
-  email: z.string()
-    .min(1, "Email boş qalmamalıdır!")
-    .email("Düzgün email daxil edin!"),
-
-  bugTitle: z.string()
-    .min(5, "Başlıq azı 5 hərfdən ibarət olmalıdır!")
-    .max(100, "Başlıq çoxu 100 hərfdən ibarət olmalıdır!"),
-
-  bugDescription: z.string()
-    .min(20, "The description must be at least 20 characters long.")
-    .max(500, "The description cannot exceed 500 characters."),
-})
-
+const messages = {
+  az: {
+    nameMin: "Ad ən az 3 hərfdən ibarət olmalıdı.",
+    lastNameMin: "Soyad ən az 3 hərfdən ibarət olmalıdı.",
+    emailRequired: "Email boş qalmamalıdır!",
+    emailInvalid: "Düzgün email daxil edin!",
+    bugTitleMin: "Başlıq azı 5 hərfdən ibarət olmalıdır!",
+    bugTitleMax: "Başlıq çoxu 100 hərfdən ibarət olmalıdır!",
+    bugDescMin: "Təsvir ən az 20 hərfdən ibarət olmalıdır.",
+    bugDescMax: "Təsvir 500 hərfdən artıq olmamalıdır.",
+  },
+  en: {
+    nameMin: "Name must be at least 3 characters.",
+    lastNameMin: "Last name must be at least 3 characters.",
+    emailRequired: "Email cannot be empty!",
+    emailInvalid: "Enter a valid email!",
+    bugTitleMin: "Title must be at least 5 characters.",
+    bugTitleMax: "Title cannot exceed 100 characters.",
+    bugDescMin: "Description must be at least 20 characters.",
+    bugDescMax: "Description cannot exceed 500 characters.",
+  },
+  ru: {
+    nameMin: "Имя должно быть не менее 3 символов.",
+    lastNameMin: "Фамилия должна быть не менее 3 символов.",
+    emailRequired: "Email не может быть пустым!",
+    emailInvalid: "Введите корректный email!",
+    bugTitleMin: "Заголовок должен быть не менее 5 символов.",
+    bugTitleMax: "Заголовок не должен превышать 100 символов.",
+    bugDescMin: "Описание должно быть не менее 20 символов.",
+    bugDescMax: "Описание не может превышать 500 символов.",
+  }
+}
 const ContactPage = () => {
+
+  const t = useTranslations('contact')
+  const locale = useLocale() as "az" | "en" | "ru";
+  const tMessages = messages[locale];
+  const bugReportSchema = React.useMemo(
+    () =>
+      z.object({
+        name: z.string().min(3, tMessages.nameMin),
+        lastName: z.string().min(3, tMessages.lastNameMin),
+        email: z.string()
+          .min(1, tMessages.emailRequired)
+          .email(tMessages.emailInvalid),
+        bugTitle: z.string()
+          .min(5, tMessages.bugTitleMin)
+          .max(100, tMessages.bugTitleMax),
+        bugDescription: z.string()
+          .min(20, tMessages.bugDescMin)
+          .max(500, tMessages.bugDescMax),
+      }),
+    [tMessages]
+  );
+
+
+
   type BugReportType = z.infer<typeof bugReportSchema>
   const {
     register,                        // input-ları forma bağlamaq üçün
@@ -67,7 +105,7 @@ const ContactPage = () => {
           viewport={{ once: false }}
           className='sm:text-6xl text-5xl uppercase font-black text-center p-2'
         >
-          Bizimlə Əlaqə
+          {t('title')}
         </motion.h2>
 
         <motion.p
@@ -77,7 +115,8 @@ const ContactPage = () => {
           viewport={{ once: false }}
           className="w-[70%] text-center"
         >
-          Bizimlə əlaqə saxlayın və suallarınızı bizə göndərin. Komandamız ən qısa zamanda sizə cavab verəcək.
+          {t('description')}
+
         </motion.p>
       </div>
       <div className="w-full flex justify-start items-center my-10 rounded-2xl" style={{
@@ -85,32 +124,32 @@ const ContactPage = () => {
       }}>
         <Card className="w-full text-center bg-transparent flex flex-col mx-auto" >
           <CardHeader className="text-white" >
-            <CardTitle className={`${roboto.className} text-4xl font-bold mt-8`}>Sualınız var?</CardTitle>
+            <CardTitle className={`${roboto.className} text-4xl font-bold mt-8`}>{t('cardTitle')}</CardTitle>
             <CardDescription className={`${roboto.className} text-white text-xl`}>
-              Formu doldurun və bizimlə əlaqə saxlayın. Ən qısa zamanda sizə geri dönüş edəcəyik.
+              {t('cardDescription')}
             </CardDescription>
           </CardHeader>
           <CardContent>
 
             <div className={`${inter.className} md:hidden text-blue-900 w-full mx-auto gap-2 text-sm justify-between flex flex-col mt-10`} >
               <div className="bg-white text-lg px-7 py-3 flex flex-col rounded-2xl cursor-pointer">
-                <b>Email : </b>info@masterschool.az</div>
+                <b>{t('email')} : </b>info@masterschool.az</div>
               <div className="flex justify-between gap-2">
                 <div className="bg-white w-1/2 px-7 py-3 rounded-2xl flex flex-col cursor-pointer">
-                  <span><b>Telefon : </b></span>
+                  <span><b>{t('telefon')} : </b></span>
                   070 710 33 43</div>
-                <div className="bg-white w-1/2 p-5 px-7 py-3 flex flex-col rounded-2xl cursor-pointer"><b>İş saatları :</b> 08:30 - 20:00
+                <div className="bg-white w-1/2 p-5 px-7 py-3 flex flex-col rounded-2xl cursor-pointer"><b>{t("isSaatlari")} :</b> 08:30 - 20:00
                 </div>
               </div>
             </div>
 
             <div className={`${inter.className} hidden md:flex text-blue-900 md:w-4/5 mx-auto gap-2 lg:text-lg xl:text-xl justify-between mt-10`} >
               <div className="bg-white w-1/3 lg:p-5 px-7 py-3 rounded-2xl flex flex-col xl:flex-row cursor-pointer">
-                <span><b>Telefon : </b></span>
+                <span><b>{t('telefon')} : </b></span>
                 070 710 33 43</div>
               <div className="bg-white w-1/3 lg:p-5 px-7 py-3 flex flex-col xl:flex-row rounded-2xl cursor-pointer">
-                <b>Email : </b>info@masterschool.az</div>
-              <div className="bg-white  w-1/3 lg:p-5 px-7 py-3 flex flex-col xl:flex-row rounded-2xl cursor-pointer"><b>İş saatları :</b> 08:30 - 20:00
+                <b>{t('email')} : </b>info@masterschool.az</div>
+              <div className="bg-white  w-1/3 lg:p-5 px-7 py-3 flex flex-col xl:flex-row rounded-2xl cursor-pointer"><b>{t("isSaatlari")} :</b> 08:30 - 20:00
               </div>
             </div>
 
@@ -123,7 +162,7 @@ const ContactPage = () => {
                       <input
                         {...register("name")}
                         type="text"
-                        placeholder="Ad*"
+                        placeholder={t('name')}
                         className="border p-3 w-full"
                       />
                       {errors.name && (
@@ -136,7 +175,7 @@ const ContactPage = () => {
                       <input
                         {...register("lastName")}
                         type="text"
-                        placeholder="Soyad*"
+                        placeholder={t('lastName')}
                         className="border p-3 w-full"
                       />
                       {errors.name && (
@@ -152,7 +191,7 @@ const ContactPage = () => {
                     <input
                       {...register("email")}
                       type="email"
-                      placeholder="Email*"
+                      placeholder={`${t('email')}*`}
                       className="border p-3 w-full"
                     />
                     {errors.email && (
@@ -167,7 +206,7 @@ const ContactPage = () => {
                     <input
                       {...register("bugTitle")}
                       type="text"
-                      placeholder="Sual başlığı*"
+                      placeholder={t('bugTitle')}
                       className="border p-3 w-full"
                     />
                     {errors.bugTitle && (
@@ -182,7 +221,7 @@ const ContactPage = () => {
                   <div className="flex- flex-col w-full">
                     <textarea
                       {...register("bugDescription")}
-                      placeholder="Sualın izahı"
+                      placeholder={t('bugDescription')}
                       rows={5}
                       className="border p-3 w-full"
                     />
@@ -199,7 +238,7 @@ const ContactPage = () => {
                   type="button"
                   onClick={() => reset()}
                 >
-                  Reset
+                  {t("buttonReset")}
                 </Button>
 
                 <Button
@@ -207,7 +246,7 @@ const ContactPage = () => {
                   disabled={isSubmitting}
                   className={`cursor-pointer bg-white text-blue-900  p-5 ${roboto.className}`}
                 >
-                  {isSubmitting ? "Göndərilir..." : "Göndər"}
+                  {isSubmitting ? <p>{t("buttonSending")}</p> : <p>{t('buttonSubmit')}</p>}
                 </Button>
               </div>
             </form>

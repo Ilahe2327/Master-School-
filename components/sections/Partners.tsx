@@ -13,7 +13,9 @@ import {
 } from "@/components/ui/card"
 import Image from 'next/image'
 import { inter } from '../layout/Navbar'
+import { useTranslations } from 'next-intl'
 const Partners = () => {
+    const t = useTranslations('Partners')
     return (
         <div className='flex flex-col items-center w-[90%] mx-auto min-h-[80vh]'>
             <div className={`${inter.className} text-center flex justify-center gap-3 items-center flex-col h-auto md:p-10 py-10 mx-2 text-white`}>
@@ -24,7 +26,7 @@ const Partners = () => {
                     viewport={{ once: false }}
                     className={`font-extrabold sm:text-6xl text-4xl mt-15 uppercase ${inter.className}`}
                 >
-                    Partnyorlarımız
+                    {t("title")}
                 </motion.h2>
 
                 <motion.p
@@ -33,7 +35,7 @@ const Partners = () => {
                     transition={{ duration: 0.6 }}
                     viewport={{ once: false }}
                 >
-                    Keyfiyyətli təhsil təcrübəsini təmin etmək üçün sənayenin öndə gedən qurumları və universitetləri ilə əməkdaşlıq edirik.
+                    {t("description")}
                 </motion.p>
             </div>
             {/* <div className={`${inter.className}  col-span-9 text-center `}>

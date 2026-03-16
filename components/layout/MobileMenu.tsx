@@ -29,12 +29,12 @@ const MobileMenu = () => {
                         <SheetDescription className='mt-10 flex text-[17px] flex-col gap-3 uppercase'>
                             <SheetClose asChild>
                                 <Link href={'/#hero'} className={`text-[#2d64b6] font-semibold ${inter.className} transition-text-shadow duration-500 hover:text-shadow-[2px_2px_3px_#597be6]
-                hover-underline
-                `}>Ana səhifə</Link></SheetClose>
+                                hover-underline
+                                `}>Ana səhifə</Link></SheetClose>
                             <SheetClose asChild>
                                 <Link href={'/#aboutSection'} className={`text-[#2d64b6] font-semibold ${inter.className} transition-text-shadow duration-500 hover:text-shadow-[6px_2px_3px_#597be6] 
-              hover-underline
-                `} >Haqqımızda</Link></SheetClose>
+                                hover-underline
+                                    `} >Haqqımızda</Link></SheetClose>
                             <SheetClose asChild>
                                 <Link href={'/#services'} className={`text-[#2d64b6] p-0 font-semibold ${inter.className} transition-text-shadow duration-500 hover:text-shadow-[2px_2px_3px_#597be6]  hover-underline`}>Xidmətlər</Link></SheetClose>
                             <SheetClose asChild>
@@ -45,7 +45,21 @@ const MobileMenu = () => {
                                 <Link href={'/#contact'} className={`text-[#2d64b6] font-semibold ${inter.className} transition-text-shadow duration-500 hover:text-shadow-[2px_2px_3px_#597be6]  hover-underline`}>Əlaqə</Link></SheetClose>
                         </SheetDescription>
                     </SheetHeader>
-
+                    <SheetHeader>
+                        <SheetTitle className={`${inter.className} font-semibold text-2xl text-center mt-4 uppercase text-[#2d64b6]`}>Dil dəyişimi</SheetTitle>
+                        <SheetDescription className='mt-10 flex text-[17px] flex-col gap-3 uppercase'>
+                            <SheetClose asChild>
+                                <Link href={'/az'} className={`text-[#2d64b6] font-semibold ${inter.className} transition-text-shadow duration-500 hover:text-shadow-[2px_2px_3px_#597be6]
+                                hover-underline
+                                `}>AZ</Link></SheetClose>
+                            <SheetClose asChild>
+                                <Link href={'/en'} className={`text-[#2d64b6] font-semibold ${inter.className} transition-text-shadow duration-500 hover:text-shadow-[6px_2px_3px_#597be6] 
+                                hover-underline
+                                    `} >EN</Link></SheetClose>
+                            <SheetClose asChild>
+                                <Link href={'/ru'} className={`text-[#2d64b6] p-0 font-semibold ${inter.className} transition-text-shadow duration-500 hover:text-shadow-[2px_2px_3px_#597be6]  hover-underline`}>RU</Link></SheetClose>
+                        </SheetDescription>
+                    </SheetHeader>
                 </SheetContent>
             </Sheet>
         </div>

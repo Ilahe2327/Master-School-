@@ -1,3 +1,5 @@
+
+export type Locale = 'az' | 'en' | 'ru'
 export interface FilialImage {
     id: number
     image: string
@@ -7,15 +9,27 @@ export interface FilialImage {
 
 export interface Filial {
     slug: string
-    title: string
-    unvan: string
+    title: {
+        az: string
+        en: string
+        ru: string
+    }
+    unvan: {
+        az: string
+        en: string
+        ru: string
+    },
     poct?: string
+    index?:string
     telefon: string[]
-    city: string
+    city: {
+        az: string
+        en: string
+        ru: string
+    }
     fasile: string
-    index?: string
-    images: FilialImage[]
-    mapUrl?: string
-    lat:number
-    lng:number
+    images: { id: number; image: string; width: number; height: number }[]
+    lat: number
+    lng: number
 }
+

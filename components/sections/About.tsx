@@ -5,7 +5,9 @@ import { motion } from "framer-motion"
 import '../../css/About.css'
 import { archivoBlack, inter, rasingFont, roboto } from '../layout/Navbar'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 const AboutSection = () => {
+  const t = useTranslations("About")
   const masterNeticeler = Array.from({ length: 9 }, (_, index) => `/masterNeticeler/img${index + 1}.webp`)
   return (
     <div id='aboutSection' className='relative flex flex-col justify-center items-start px-8 w-full bg-gradient-to-b xl:mt-28 lg:mt-10 mt-0 h-auto from-gray-100 to-gray-50 py-50' style={{
@@ -26,7 +28,7 @@ const AboutSection = () => {
               viewport={{ once: false }}
               className={`${rasingFont.className} text-4xl sm:text-5xl lg:text-6xl font-bold  `}
             >
-              Master School – 10 illik təcrübə, yüzlərlə uğur!
+              {t("title")}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 40 }}
@@ -35,7 +37,7 @@ const AboutSection = () => {
               viewport={{ once: false }}
               className={`${inter.className} text-lg sm:text-xl xl:mt-4 mt-8`}
             >
-              Artıq 10 ildir ki, Master School Təhsil Mərkəzi təhsildə keyfiyyətin, peşəkarlığın və uğurun ünvanıdır...
+              {t("description")}
             </motion.p>
           </div>
           <motion.div
@@ -45,22 +47,22 @@ const AboutSection = () => {
             className={`${inter.className} aboutTextCard text-blue-950 xl:text-xl sm:text-lg text-sm xl:font-extrabold w-full p-10 my-5 rounded-2xl`}
           >
             <h2 className={`${inter.className} font-extrabold`}>
-              Uğurlarımızla fəxr edirik:
+              {t("achievementsTitle")}
             </h2>
             <ul className='pl-10'>
               <li>
-                Magistratura üzrə son 6 ildə həm Azərbaycan, həm də Rus bölmələri üzrə 11 Respublika birincimiz olub.
+                {t("achievement1")}
               </li>
-              <li> Həmçinin Dövlət qulluğu və Doktorantura istiqamətlərində onlarla Respublika birinciliyi qazanmışıq.</li>
+              <li>{t("achievement2")}</li>
             </ul>
             <p className='font-extrabold'>
-              Master School – bilik, zəhmət və uğurun kəsişdiyi məkan.
+              {t("slogan")}
             </p>
           </motion.div>
         </div>
         <div className='xl:w-1/2 w-full aboutCardBgImage p-1 rounded-4xl flex flex-col'>
           <h2 className={`xl:text-3xl lg:text-4xl sm:text-3xl text-2xl ${inter.className} text-center font-extrabold p-2`}>
-            <span className='inline-block text-center text-yellow-300'>MAGISTRATURAYA</span> <span className='block text-white'>QƏBUL ÜZRƏ YÜKSƏK NƏTİCƏLƏRİ</span>   </h2>
+            <span className='inline-block text-center text-yellow-300'>{t('resultsTitle1')}</span> <span className='block text-white'>{t('resultsTitle2')}</span>   </h2>
           <div className='grid xl:grid-cols-3 sm:grid-cols-3 md:grid-cols-5 grid-cols-2  mx-auto xl:space-x-5 space-x-3 space-y-3 mt-2'>
             {
               masterNeticeler.map((img, index) => (

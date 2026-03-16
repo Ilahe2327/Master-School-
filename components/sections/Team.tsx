@@ -13,10 +13,12 @@ import { inter, roboto } from "../layout/Navbar"
 import { komanda } from "@/data/publicData/images"
 import Image from "next/image"
 import Autoplay from "embla-carousel-autoplay"
+import { useLocale, useTranslations } from "next-intl"
 
 const TeamSection = () => {
     const autoplay = React.useRef(Autoplay({ delay: 3000 }))
-
+    const t = useTranslations("Team")
+    const locale = useLocale()
     return (
         <div id="mentors" className='flex flex-col items-center'>
             <div className={`${inter.className} flex justify-center gap-3 items-center flex-col h-auto p-10 text-white`}>
@@ -27,7 +29,7 @@ const TeamSection = () => {
                     viewport={{ once: false }}
                     className={`font-extrabold sm:text-6xl text-4xl mt-15 text-center  uppercase ${inter.className}`}
                 >
-                    Bizim Komanda
+                    {t('title')}
                 </motion.h2>
 
                 <motion.p
@@ -37,7 +39,7 @@ const TeamSection = () => {
                     viewport={{ once: false }}
                     className="text-center"
                 >
-                    Peşəkar və təcrübəli mütəxəssislərdən ibarət komandamız sizə ən yaxşı xidməti təqdim etməyə hazırdır.
+                    {t('description')}
                 </motion.p>
             </div>
             <div className="w-[70%] mx-auto">
@@ -55,7 +57,7 @@ const TeamSection = () => {
                             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                                 <div className="w-full">
                                     <Card>
-                                        <CardContent className="w-full flex flex-col aspect-square items-center justify-center">
+                                        <CardContent className="w-full flex flex-col aspect-[4/5] items-center justify-center">
                                             <Image
                                                 src={img.image}
                                                 alt={`${img.name}`}
@@ -64,7 +66,7 @@ const TeamSection = () => {
                                                 className="w-full h-full rounded-t-xl object-cover"
                                             />
                                             <CardFooter className='w-full '>
-                                                <p className={`${roboto.className} text-center max-h-6 font-bold sm:text-xl text-lg `}>{img.name}</p>
+                                                <p className={`${roboto.className} text-center max-h-6 font-bold sm:text-xl text-lg `}>{img.name?.[locale as 'az' | 'en' | 'ru'] ?? img.name?.az}</p>
                                             </CardFooter>
                                         </CardContent>
                                     </Card>

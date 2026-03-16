@@ -1,0 +1,115 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "mentors": "Mentors",
+    "branches": "Branches",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Professional Education, Bright Future",
+    "description": "Transform your career with the latest courses designed by industry professionals. Learn at your own pace and achieve your goals.",
+    "buttons": {
+      "about": "About",
+      "contact": "Contact"
+    }
+  },
+  "About": {
+    "title": "Master School – 10 Years of Experience, Hundreds of Successes!",
+    "description": "For 10 years, Master School Education Center has been the address of quality, professionalism, and success in education...",
+    "achievementsTitle": "We take pride in our achievements:",
+    "achievement1": "In the last 6 years, we have been the first in the Republic in both Azerbaijani and Russian sections for master's programs.",
+    "achievement2": "Also, we have won numerous first places in state service and doctoral programs.",
+    "slogan": "Master School – the place where knowledge, effort, and success intersect.",
+    "resultsTitle1": "FOR MASTER'S PROGRAM",
+    "resultsTitle2": "HIGH RESULTS IN ADMISSION"
+  },
+  "Services": {
+    "title": "OUR SERVICES",
+    "subtitle": "WHAT WE OFFER",
+    "description": "We provide the best educational services to our students",
+    "magistraturaTitle": "Master's Preparation",
+    "magistraturaDesc": "Master's preparation is taught in 3 subjects: Logic, Informatics, Foreign Language. Each subject is taught twice a week for 90 minutes. On weekends, reward exams are held for students.",
+    "governmentTitle": "State Service",
+    "governmentDesc": "Held twice a week for 90 minutes. Trial exams are organized every weekend.",
+    "miqTitle": "MIQ & Certification",
+    "miqDesc": "Lessons are held twice a week for 1.5 hours. The first lesson is a free trial.",
+    "abiturientTitle": "High School Preparation",
+    "abiturientDesc": "Lessons are held twice a week for 1.5 hours. The first lesson is a free trial.",
+    "preschoolTitle": "Preschool",
+    "preschoolDesc": "Lessons are held twice a week for 1.5 hours. The first lesson is a free trial.",
+    "ieltsTitle": "IELTS",
+    "ieltsDesc": "Lessons are held twice a week for 1.5 hours. Speaking clubs are organized weekly and exams are held at the end of each month."
+  },
+  "Team": {
+    "title": "Our Team",
+    "description": "Our team of professional and experienced specialists is ready to provide you with the best service."
+  },
+  "Publication": {
+    "title": "Our Publications",
+    "description": "Here you can explore the highest-quality educational materials for master's, doctoral, state service, and high school exams."
+  },
+  "branches": {
+    "title": "Our Branches",
+    "description": "We provide services at various points in the city"
+  },
+  "filialDetail": {
+    "filiali": "Branch",
+    "masterSchool": "MasterSchool Education Center",
+    "telefon": "Phone",
+    "seher": "City",
+    "unvan": "Address",
+    "poct": "Postal Code",
+    "fasile": "Break",
+    "index": "Index",
+    "sual": "Have additional questions?",
+    "contact": "Contact Us"
+  },
+  "Partners": {
+    "title": "Our Partners",
+    "description": "We collaborate with leading institutions and universities to ensure quality educational experience."
+  },
+  "OurResults": {
+    "title": "High School Results",
+    "description": "Our course's essential feature is our high results",
+    "button": "Show All"
+  },
+  "MasterResults": {
+    "title": "Master's Results",
+    "description": "Our course's essential feature is our high master's results"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with us and send your questions. Our team will respond to you as soon as possible.",
+    "cardTitle": "Have a question?",
+    "cardDescription": "Fill out the form and contact us. We will get back to you as soon as possible.",
+    "email": "Email",
+    "telefon": "Phone",
+    "isSaatlari": "Working Hours",
+    "name": "Name*",
+    "lastName": "Last Name*",
+    "bugTitle": "Question Title*",
+    "bugDescription": "Question Description",
+    "buttonReset": "Reset",
+    "buttonSubmit": "Send",
+    "buttonSending": "Sending..."
+  },
+  "CtaSection": {
+    "title": "Ready to Start Learning?",
+    "description": "Contact us now to get information about courses, registration, or partnership opportunities.",
+    "button": "Contact Us"
+  },
+  "footer": {
+    "footerDescription": "We provide students with all the tools needed to learn modern technologies and advance their careers.",
+    "Quicklinks": "Quick Links",
+    "about": "About",
+    "branches": "Branches",
+    "services": "Services",
+    "mentors": "Mentors",
+    "contact": "Contact",
+    "unvan": "203B Nizami St., AF Business House (Main Branch)",
+    "sosial": "Social",
+    "huquqQorunma": "2026 MilliSoft. All rights reserved."
+  }
+}

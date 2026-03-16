@@ -24,11 +24,13 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import { useTranslations } from "next-intl"
 
 const OurResults = () => {
   const resultsFirst = Array.from({ length: 8 }, (_, index) => `/neticeler/img${index + 2}.png`)
   const resultsSecond = Array.from({ length: 15 }, (_, index) => `/neticeler/img${index + 1}.png`)
   const [open, setOpen] = React.useState(false)
+  const t = useTranslations('OurResults')
   return (
     <div className='flex flex-col items-center'>
       <div className={`${inter.className} text-center flex justify-center gap-3 items-center flex-col h-auto md:p-10 py-10 text-white`}>
@@ -39,7 +41,7 @@ const OurResults = () => {
           viewport={{ once: false }}
           className={`font-extrabold sm:text-6xl text-4xl mt-15  uppercase ${inter.className}`}
         >
-          Abituriyent Nəticələrimiz
+          {t("title")}
         </motion.h2>
 
         <motion.p
@@ -48,7 +50,7 @@ const OurResults = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: false }}
         >
-          Kursumuzun olmazsa olmazı yüksək nəticələrimiz
+          {t("description")}
         </motion.p>
       </div>
 
@@ -71,11 +73,11 @@ const OurResults = () => {
 
             <Dialog>
               <DialogTrigger asChild>
-                <Button onClick={() => setOpen(true)} variant={'link'} className="float-right mb-5 font-bold bg-white cursor-pointer ">Hamısını göstər</Button>
+                <Button onClick={() => setOpen(true)} variant={'link'} className="float-right mb-5 font-bold bg-white cursor-pointer ">{t('button')}</Button>
               </DialogTrigger>
               <DialogContent className="w-[95vw]  p-6" >
                 <DialogHeader className="w-full">
-                  <DialogTitle className={`${inter.className} text-2xl md:text-3xl lg:text-4xl text-center font-bold`}>Abituriyent Nəticələrimiz</DialogTitle>
+                  <DialogTitle className={`${inter.className} text-2xl md:text-3xl lg:text-4xl text-center font-bold`}>{t("title")}</DialogTitle>
                   <DialogDescription asChild>
                     <div className='w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6 mt-8'>
                       {

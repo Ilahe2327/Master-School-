@@ -5,6 +5,8 @@ import { Racing_Sans_One, Roboto, Archivo_Black } from "next/font/google"
 import { Inter } from 'next/font/google'
 import { MenuIcon } from 'lucide-react'
 import MobileMenu from './MobileMenu'
+import LanguageSwitcher from './LanguageSwitcher'
+import { useTranslations } from 'next-intl'
 
 export const rasingFont = Racing_Sans_One({
   variable: "--font-racing",
@@ -28,6 +30,7 @@ export const roboto = Roboto({
   style: ["normal", "italic"]
 })
 const NavbarSection = () => {
+  const t = useTranslations("Navbar")
   return (
     // <div className=''>
     <div className={`flex h-auto  text-xl shadow-[4px 5px 2px #ffffff] font-extrabold text-white ${roboto.className} rounded-b-4xl `}>
@@ -36,13 +39,13 @@ const NavbarSection = () => {
         <div className='hidden lg:flex w-3/8 space-x-10 justify-center items-center'>
           <Link href={'#hero'} className={`text-white font-semibold ${roboto.className} transition-text-shadow duration-500 hover:text-shadow-[1px_1px_2px_#ffffff]
                 hover-underline
-                `}>Ana Səhifə</Link>
+                `}>{t("home")}</Link>
           <Link href={'#aboutSection'} className={`text-white font-semibold ${roboto.className} transition-text-shadow duration-500 hover:text-shadow-[1px_1px_2px_#ffffff]
                 hover-underline
-                `}>Haqqımızda</Link>
+                `}>{t('about')}</Link>
           <Link href={'#services'} className={`text-white font-semibold ${roboto.className} transition-text-shadow duration-500 hover:text-shadow-[1px_1px_2px_#ffffff]
                 hover-underline
-                `}>Xidmətlər</Link>
+                `}>{t("services")}</Link>
         </div>
         <div className='lg:w-1/8 w-full container flex mx-5 justify-between items-center py-1'>
           <Image src={'/masterschool.png'}
@@ -56,13 +59,14 @@ const NavbarSection = () => {
         <div className='hidden lg:flex  w-3/8 space-x-10 justify-center items-center'>
           <Link href={'#mentors'} className={`text-white font-semibold ${roboto.className} transition-text-shadow duration-500 hover:text-shadow-[1px_1px_2px_#ffffff]
                 hover-underline
-                `}>Müəllimlər</Link>
+                `}>{t("mentors")}</Link>
           <Link href={'#branch'} className={`text-white font-semibold ${roboto.className} transition-text-shadow duration-500 hover:text-shadow-[1px_1px_2px_#ffffff]
                 hover-underline
-                `}>Filiallar</Link>
+                `}>{t('branches')}</Link>
           <Link href={'#contact'} className={`text-white font-semibold ${roboto.className} transition-text-shadow duration-500 hover:text-shadow-[1px_1px_2px_#ffffff]
                 hover-underline
-                `}>Əlaqə</Link>
+                `}>{t('contact')}</Link>
+          <LanguageSwitcher />
         </div>
       </div>
     </div>

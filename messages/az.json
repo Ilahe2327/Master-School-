@@ -1,0 +1,115 @@
+{
+    "Navbar": {
+        "home": "Ana Səhifə",
+        "about": "Haqqımızda",
+        "services": "Xidmətlər",
+        "mentors": "Müəllimlər",
+        "branches": "Filiallar",
+        "contact": "Əlaqə"
+    },
+    "hero": {
+        "title": "Peşəkar təhsil, Parlaq gələcək",
+        "description": "Sənaye peşəkarları tərəfindən hazırlanmış ən müasir kurslarla karyeranızı dəyişdirin. Öz tempinizdə öyrənin və arzularınıza nail olun.",
+        "buttons": {
+            "about": "Haqqımızda",
+            "contact": "Əlaqə"
+        }
+    },
+    "About": {
+        "title": "Master School – 10 illik təcrübə, yüzlərlə uğur!",
+        "description": "Artıq 10 ildir ki, Master School Təhsil Mərkəzi təhsildə keyfiyyətin, peşəkarlığın və uğurun ünvanıdır...",
+        "achievementsTitle": "Uğurlarımızla fəxr edirik:",
+        "achievement1": "Magistratura üzrə son 6 ildə həm Azərbaycan, həm də Rus bölmələri üzrə 11 Respublika birincimiz olub.",
+        "achievement2": "Həmçinin Dövlət qulluğu və Doktorantura istiqamətlərində onlarla Respublika birinciliyi qazanmışıq.",
+        "slogan": "Master School – bilik, zəhmət və uğurun kəsişdiyi məkan.",
+        "resultsTitle1": "MAGISTRATURAYA",
+        "resultsTitle2": "QƏBUL ÜZRƏ YÜKSƏK NƏTİCƏLƏRİ"
+    },
+    "Services": {
+        "title": "XİDMƏTLƏRİMİZ",
+        "subtitle": "NƏ TƏKLİF EDİRİK",
+        "description": "Tələbələrimizə ən yaxşı təhsil xidmətlərini təqdim edirik",
+        "magistraturaTitle": "Magistratura",
+        "magistraturaDesc": "Magistratura hazırlığı 3 fənn üzrə tədris edilir: Məntiq, İnformatika, Xarici dil. Hər fənn həftədə 2 dəfə olmaqla 90 dəqiqə keçirilir. Həftəsonları tələbələr üçün mükafatlı sınaq imtahanları keçirilir.",
+        "governmentTitle": "Dövlət Qulluğu",
+        "governmentDesc": "Həftədə 2 dəfə, 90 dəqiqə olmaqla keçirilir. Hər həftə sonu sınaq imtahanları təşkil edilir.",
+        "miqTitle": "MİQ və Sertifikasiya",
+        "miqDesc": "Dərslərimiz həftədə 2 dəfə, 1.5 saat olmaqla keçirilir. İlk dərs ödənişsiz sınaq dərsidir.",
+        "abiturientTitle": "Abituriyent",
+        "abiturientDesc": "Dərslərimiz həftədə 2 dəfə, 1.5 saat olmaqla keçirilir. İlk dərs ödənişsiz sınaq dərsidir.",
+        "preschoolTitle": "Məktəbəqədər",
+        "preschoolDesc": "Dərslərimiz həftədə 2 dəfə, 1.5 saat olmaqla keçirilir. İlk dərs ödənişsiz sınaq dərsidir.",
+        "ieltsTitle": "IELTS",
+        "ieltsDesc": "Dərslərimiz həftədə 2 dəfə, 1.5 saat olmaqla keçirilir. Həftədə danışıq klubları keçirilir və hər ayın sonunda imtahan təşkil olunur."
+    },
+    "Team": {
+        "title": "Bizim Komanda",
+        "description": "Peşəkar və təcrübəli mütəxəssislərdən ibarət komandamız sizə ən yaxşı xidməti təqdim etməyə hazırdır."
+    },
+    "Publication": {
+        "title": "Nəşrlərimiz",
+        "description": "Burada magistr, doktorantura, dövlət qulluğu və abituriyent imtahanları üçün ən keyfiyyətli tədris vəsaitləri ilə tanış ola bilərsiniz."
+    },
+    "branches": {
+        "title": "Filiallarımız",
+        "description": "Şəhərin müxtəlif nöqtələrində sizə xidmət göstəririk"
+    },
+    "filialDetail": {
+        "filiali": "Filialı",
+        "masterSchool": "MasterSchool Təhsil Mərkəzi",
+        "telefon": "Telefon",
+        "seher": "Şəhər",
+        "unvan": "Ünvan",
+        "poct": "Poçt",
+        "fasile": "Fasilə",
+        "index": "İndeks",
+        "sual": "Əlavə sualınız var?",
+        "contact": "Bizimlə əlaqə saxla"
+    },
+    "Partners": {
+        "title": "Partnyorlarımız",
+        "description": "Keyfiyyətli təhsil təcrübəsini təmin etmək üçün sənayenin öndə gedən qurumları və universitetləri ilə əməkdaşlıq edirik."
+    },
+    "OurResults": {
+        "title": "Abituriyent Nəticələrimiz",
+        "description": "Kursumuzun olmazsa olmazı yüksək nəticələrimiz",
+        "button": "Hamısını göstər"
+    },
+    "MasterResults": {
+        "title": "Magistratura Nəticələrimiz",
+        "description": "Kursumuzun olmazsa olmazı yüksək magistratura nəticələrimiz"
+    },
+    "contact": {
+        "title": "Bizimlə Əlaqə",
+        "description": "Bizimlə əlaqə saxlayın və suallarınızı bizə göndərin. Komandamız ən qısa zamanda sizə cavab verəcək.",
+        "cardTitle":"Sualınız var?",
+        "cardDescription":" Formu doldurun və bizimlə əlaqə saxlayın. Ən qısa zamanda sizə geri dönüş edəcəyik.",
+        "email":"Email",
+        "telefon":"Telefon",
+        "isSaatlari":"İş saatları",
+        "name":"Ad*",
+        "lastName":"Soyad*",
+        "bugTitle":"Sual başlığı*",
+        "bugDescription":"Sualın izahı",
+        "buttonReset":"Temizle",
+        "buttonSubmit":"Göndər",
+        "buttonSending":"Göndərilir..."
+    },
+    "CtaSection": {
+        "title": "Öyrənməyə Başlamağa Hazırsınız?",
+        "description": "Kurslar, qeydiyyat və ya tərəfdaşlıq imkanları haqqında məlumat almaq üçün indi bizimlə əlaqə saxlayın.",
+        "button": "Bizimlə əlaqə"
+    },
+    "footer":{
+        "footerDescription":"Biz tələbələrə müasir texnologiyaları öyrənmək və karyera inkişafını irəli aparmaq üçün lazım olan bütün vasitələri təqdim edirik.",
+        "Quicklinks":"Sürətli keçidlər",
+        "about":"Haqqımızda",
+        "branches":"Filiallar",
+        "services":"Xidmətlər",
+        "mentors":"Müəllimlər",
+        "contact":"Əlaqə",
+        "unvan":"Nizami küç. 203B, AF Business House (Əsas filial)",
+        "sosial":"Sosial",
+        "huquqQorunma":"2026 MilliSoft. Bütün hüquqlar qorunur."
+        }
+}

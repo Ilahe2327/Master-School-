@@ -15,9 +15,13 @@ import Image from "next/image"
 import Autoplay from "embla-carousel-autoplay"
 import Link from "next/link"
 import { branches } from "@/data/branchData/data"
+import { type Locale } from '@/types'
+import { useLocale, useTranslations } from "use-intl"
 
 const BranchesSection = () => {
   const autoplay = React.useRef(Autoplay({ delay: 3000 }))
+  const locale = useLocale() as Locale
+  const t = useTranslations('branches')
   return (
     <div id="branch" className='flex flex-col items-center'>
       <div className={`${inter.className} flex justify-center gap-3 items-center flex-col h-auto p-10 text-white`}>
@@ -26,7 +30,7 @@ const BranchesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false }}
-          className={`font-black sm:text-6xl text-4xl my-3   uppercase ${inter.className}`}
+          className={`font-black sm:text-6xl text-4xl my-3 p-2   uppercase ${inter.className}`}
           style={{
             background: 'radial-gradient(circle, #091057, #070F2B, #091057, #091057)',
             backgroundSize: '200% auto',
@@ -36,7 +40,7 @@ const BranchesSection = () => {
             animation: 'textShine 6s linear infinite'  // burda sadəcə animation timing
           }}
         >
-          Filiallarımız
+          {t('title')}
         </motion.h2>
 
         <motion.p
@@ -45,7 +49,7 @@ const BranchesSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: false }}
         >
-          Şəhərin müxtəlif nöqtələrində sizə xidmət göstəririk
+          {t('description')}
         </motion.p>
       </div>
       <div className="w-[70%] mx-auto">
@@ -68,7 +72,7 @@ const BranchesSection = () => {
                   }}>
                     <CardContent className="w-full flex flex-col aspect-square items-center justify-center space-y-8">
                       <p className={`${roboto.className} text-center max-h-6 font-bold text-4xl  drop-shadow-[0_0_17px_rgba(255,255,255,0.8)]
-  drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]`} >{branch.title}</p>
+  drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]`} >{branch.title[locale]}</p>
                       <p className={`${roboto.className} text-center max-h-6 font-bold text-xl`}>
                         {branch.telefon[0]}
                       </p>

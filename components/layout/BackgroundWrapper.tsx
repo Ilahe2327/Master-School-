@@ -1,25 +1,25 @@
 'use client'
+import Plasma from '@/ui/Plasma';
+import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
-import dynamic from "next/dynamic";
-
-const Plasma = dynamic(() => import('@/ui/Plasma'), { ssr: false });
 
 export default function BackgroundWrapper() {
+  const pathname = usePathname();
+
   useEffect(() => {
-    const canvas = document.createElement('canvas');
-    console.log('WebGL2:', canvas.getContext('webgl2'));
-    console.log('WebGL1:', canvas.getContext('webgl'));
-  }, []);
+    console.log('pathname:', pathname);
+  }, [pathname]);
 
   return (
-    <div className="fixed inset-0 -z-10">
+    <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: -10 }}>
       <Plasma
+        key={pathname}
         color="#0d92f1"
         speed={0.6}
         direction="forward"
         scale={1.1}
-        opacity={0.6}
-        mouseInteractive={true}
+        opacity={1}
+        mouseInteractive={false}
       />
     </div>
   );

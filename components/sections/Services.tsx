@@ -10,6 +10,7 @@ import { RiEnglishInput } from "react-icons/ri";
 import { FaSchoolFlag } from "react-icons/fa6";
 import { FaSchool } from "react-icons/fa6";
 import { RiGovernmentLine } from "react-icons/ri";
+import { useTranslations } from 'next-intl';
 
 interface Card {
   icon: ReactNode,
@@ -18,46 +19,47 @@ interface Card {
   color: string
 }
 
-const cards: Card[] = [
-  {
-    icon: <PiGraduationCap className='text-white text-6xl' />,
-    title: "Magistratura",
-    desc: "Magistratura hazırlığı 3 fənn üzrə tədris edilir:Məntiq, İnformatika,Xarici dil.Hər fənn həftədə 2 dəfə olmaqla 90 dəqiqə keçirilir. Həftəsonları tələbələr üçün mükafatlı SINAQ İMTAHANI keçirilir. Magistraturaya qəbul imtahanında yüksək bal toplayacaq tələbələr pul mükafatları əldə edirlər...",
-    color: "#4E71FF",
-  },
-  {
-    icon: <RiGovernmentLine className='text-white font-black text-6xl' />,
-    title: "Dövlət Qulluğu",
-    desc: "Həftədə 2 dəfə, 90 dəqiqə olmaqla keçirilir. Hər həftə sonu sınaq imtahanları təşkil edilir.",
-    color: "#4E71FF",
-  },
-  {
-    icon: <PiCertificateBold className='text-white text-6xl'/>,
-    title: "MİQ və Sertifikasiya",
-    desc: "Dərslərimiz həftədə 2 dəfə, 1.5 saat olmaqla keçirilir. İlk dərs ödənişsiz sınaq dərsidir.",
-    color: "#4E71FF",
-  },
-  {
-    icon: <PiStudentBold className='text-white text-6xl'/>,
-    title: "Abituriyent",
-    desc: "Dərslərimiz həftədə 2 dəfə, 1.5 saat olmaqla keçirilir. İlk dərs ödənişsiz sınaq dərsidir.",
-    color: "#4E71FF",
-  },
-  {
-    icon: <FaSchool className='text-white text-6xl'/>,
-    title: "Məktəbəqədər"
-    ,
-    desc: "Dərslərimiz həftədə 2 dəfə, 1.5 saat olmaqla keçirilir. İlk dərs ödənişsiz sınaq dərsidir.",
-    color: "#4E71FF",
-  },
-  {
-    icon:<RiEnglishInput className='text-white text-6xl'/>,
-    title: "İELTS",
-    desc: "Dərslərimiz həftədə 2 dəfə, 1.5 saat olmaqla keçirilir. İlk dərs ödənişsiz sınaq dərsidir. Dərs saatından əlavə həftədə 2 dəfə, 1.5 saatdan 3 saata qədər davam edən danışıq klublarımız olur. Hər ayın sonu ay üzrə keçirilmiş dərslərin imtahanı keçirilir.",
-    color: "#4E71FF",
-  },
-];
 const ServicesSection = () => {
+  const t = useTranslations("Services")
+
+  const cards: Card[] = [
+    {
+      icon: <PiGraduationCap className='text-white text-6xl' />,
+      title: t("magistraturaTitle"),
+      desc: t("magistraturaDesc"),
+      color: "#4E71FF",
+    },
+    {
+      icon: <RiGovernmentLine className='text-white text-6xl' />,
+      title: t("governmentTitle"),
+      desc: t("governmentDesc"),
+      color: "#4E71FF",
+    },
+    {
+      icon: <PiCertificateBold className='text-white text-6xl' />,
+      title: t("miqTitle"),
+      desc: t("miqDesc"),
+      color: "#4E71FF",
+    },
+    {
+      icon: <PiStudentBold className='text-white text-6xl' />,
+      title: t("abiturientTitle"),
+      desc: t("abiturientDesc"),
+      color: "#4E71FF",
+    },
+    {
+      icon: <FaSchool className='text-white text-6xl' />,
+      title: t("preschoolTitle"),
+      desc: t("preschoolDesc"),
+      color: "#4E71FF",
+    },
+    {
+      icon: <RiEnglishInput className='text-white text-6xl' />,
+      title: t("ieltsTitle"),
+      desc: t("ieltsDesc"),
+      color: "#4E71FF",
+    }
+  ];
 
   return (
     <div id='services' className='relative'>
@@ -78,7 +80,7 @@ const ServicesSection = () => {
             animation: 'textShine 6s linear infinite'  // burda sadəcə animation timing
           }}
         >
-          XIDMƏTLƏRİMİZ
+          {t("title")}
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
@@ -87,7 +89,7 @@ const ServicesSection = () => {
           viewport={{ once: false }}
           className={`font-extrabold text-2xl sm:text-3xl md:text-5xl  ${inter.className} mt-7`}
         >
-          NƏ TƏKLİF EDİRİK
+          {t("subtitle")}
         </motion.h2>
 
         <motion.p
@@ -97,7 +99,7 @@ const ServicesSection = () => {
           viewport={{ once: false }}
           className='text-center'
         >
-          Tələbələrimizə ən yaxşı təhsil xidmətlərini təqdim edirik
+          {t("description")}
         </motion.p>
       </div>
       <motion.div
