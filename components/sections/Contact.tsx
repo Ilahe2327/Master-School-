@@ -6,7 +6,7 @@ import { Controller, useForm } from "react-hook-form"
 import { toast } from "sonner"
 import * as z from "zod"
 import { motion } from "framer-motion"
-
+import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -92,8 +92,26 @@ const ContactPage = () => {
     },
   })
   function onSubmit(data: BugReportType) {
-    console.log("Form məlumatları:", data)
-    reset() // göndərildikdən sonra formu təmizlə
+    emailjs.send(
+      "service_dixit6m",
+      "template_b7vpcgj",
+      {
+        user_name: data.name,
+        user_lastname: data.lastName,
+        user_email: data.email,
+        user_bugTitle: data.bugTitle,
+        user_bugDescription: data.bugDescription
+      },
+      "Gqsm660dq0PKd7iL3"
+    )
+      .then(() => {
+        toast.success("Mesaj göndərildi!");
+        reset();
+      })
+      .catch((error) => {
+        toast.error("Mesaj göndərilmədi, xətalıdır!");
+        console.error("Error sending email:", error);
+      })
   }
   return (
     <div id="contact" className="container mx-auto my-20">
