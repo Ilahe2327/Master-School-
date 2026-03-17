@@ -18,12 +18,16 @@ import { inter } from './Navbar'
 
 const MobileMenu = () => {
     return (
-        <div className='block lg:hidden'>
+        <div className='block lg:hidden' style={{
+            zIndex:'1300'
+        }}>
             <Sheet>
                 <SheetTrigger asChild>
                     <Button className='w-15' variant={'ghost'}><Menu className='size-8' /></Button>
                 </SheetTrigger>
-                <SheetContent>
+                <SheetContent style={{
+                    zIndex:'1300'
+                }}>
                     <SheetHeader>
                         <SheetTitle className={`${inter.className} font-semibold text-2xl text-center mt-4 uppercase text-[#2d64b6]`}>Master School</SheetTitle>
                         <SheetDescription className='mt-10 flex text-[17px] flex-col gap-3 uppercase'>

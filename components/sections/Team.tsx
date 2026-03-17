@@ -51,22 +51,23 @@ const TeamSection = () => {
                     plugins={[
                         autoplay.current
                     ]}
+                    className="w-full"
                 >
-                    <CarouselContent className="-ml-1">
+                    <CarouselContent className="-ml-1 py-5">
                         {komanda.map((img, index) => (
-                            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                                <div className="w-full">
-                                    <Card>
-                                        <CardContent className="w-full flex flex-col aspect-[4/5] items-center justify-center">
+                            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 transition-transform duration-300 ease-in-out hover:brightness-97 hover:scale-103 hover:z-10 ">
+                                <div className="w-full cursor-pointer">
+                                    <Card className="w-full overflow-hidden h-[450px]">
+                                        <CardContent className="w-full h-full flex flex-col p-0">
                                             <Image
                                                 src={img.image}
                                                 alt={`${img.name}`}
                                                 width={1080}
                                                 height={1350}
-                                                className="w-full h-full rounded-t-xl object-cover"
+                                                className="w-full h-85 object-cover object-top"
                                             />
-                                            <CardFooter className='w-full '>
-                                                <p className={`${roboto.className} text-center max-h-6 font-bold sm:text-xl text-lg `}>{img.name?.[locale as 'az' | 'en' | 'ru'] ?? img.name?.az}</p>
+                                            <CardFooter className='w-full h-[35%] flex flex-col items-center justify-center bg-[#aaaaaa] text-white'>
+                                                <p className={`${roboto.className} text-center px-6 w-full mt-2 font-bold text-sm xl:text-lg line-clamp-2 `}>{img.name?.[locale as 'az' | 'en' | 'ru'] ?? img.name?.az}</p>
                                             </CardFooter>
                                         </CardContent>
                                     </Card>

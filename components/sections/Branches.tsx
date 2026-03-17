@@ -32,12 +32,12 @@ const BranchesSection = () => {
           viewport={{ once: false }}
           className={`font-black sm:text-6xl text-4xl my-3 p-2   uppercase ${inter.className}`}
           style={{
-            background: 'radial-gradient(circle, #091057, #070F2B, #091057, #091057)',
-            backgroundSize: '200% auto',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            animation: 'textShine 6s linear infinite'  // burda sadəcə animation timing
+            // background: 'radial-gradient(circle, #091057, #070F2B, #091057, #091057)',
+            // backgroundSize: '200% auto',
+            // WebkitBackgroundClip: 'text',
+            // WebkitTextFillColor: 'transparent',
+            // backgroundClip: 'text',
+            // animation: 'textShine 6s linear infinite'  // burda sadəcə animation timing
           }}
         >
           {t('title')}
@@ -62,30 +62,33 @@ const BranchesSection = () => {
             autoplay.current
           ]}
         >
-          <CarouselContent className="-ml-1">
+          <CarouselContent className="-ml-1 py-5">
             {branches.map((branch, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3"><Link href={`/filiallar/${branch.slug.toLowerCase().replace(' ', '-')}`}>
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 transition-transform duration-300 ease-in-out hover:brightness-97 hover:scale-103 hover:z-10 "><Link href={`/filiallar/${branch.slug.toLowerCase().replace(' ', '-')}`}>
                 <div className="w-full">
                   <Card className=" text-white" style={{
                     // background: 'radial-gradient(ellipse at top, #070F2B, #070F2B, #070F2B,#070F2B)'
                     background: 'linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.7)'
                   }}>
-                    <CardContent className="w-full flex flex-col aspect-square items-center justify-center space-y-8">
-                      <p className={`${roboto.className} text-center max-h-6 font-bold text-4xl  drop-shadow-[0_0_17px_rgba(255,255,255,0.8)]
-  drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]`} >{branch.title[locale]}</p>
-                      <p className={`${roboto.className} text-center max-h-6 font-bold text-xl`}>
-                        {branch.telefon[0]}
-                      </p>
+                    <CardContent className="w-full flex flex-col aspect-square items-start justify-center space-y-8">
+                      <p className={`${roboto.className} text-left max-h-6 font-bold text-4xl sm:text-5xl md:text-4xl px-10 drop-shadow-[0_0_17px_rgba(255,255,255,0.8) drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]`} >{branch.title[locale]}</p>
+
+                      <div className="flex w-full mt-12 flex-col items-start justify-start gap-3 px-10">
+                        <p className={`${roboto.className} text-left max-h-6 font-bold text-xl `}>
+                          {branch.telefon[0]}
+                        </p>
+                        <p className={`${roboto.className} w-full line-clamp-3 truncate text-left max-h-10 text-sm`}>{t('unvan')} {branch.unvan[locale]}
+                        </p>
+                      </div>
                     </CardContent>
                   </Card>
-
                 </div>
               </Link>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="bg-white  border-none text-blue-900 cursor-pointer " />
-          <CarouselNext className="bg-white border none text-blue-900 tet-2xl cursor-pointer" />
+          <CarouselPrevious className="bg-[#101F32]   text-white cursor-pointer " />
+          <CarouselNext className="bg-[#101F32]  text-white text-2xl cursor-pointer" />
         </Carousel>
       </div>
 

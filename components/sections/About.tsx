@@ -8,7 +8,7 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 const AboutSection = () => {
   const t = useTranslations("About")
-  const masterNeticeler = Array.from({ length: 9 }, (_, index) => `/masterNeticeler/img${index + 1}.webp`)
+  const masterNeticeler = Array.from({ length: 9 }, (_, index) => `/magistrNeticeler/img${index + 1}.webp`)
   return (
     <div id='aboutSection' className='relative flex flex-col justify-center items-start px-8 w-full bg-gradient-to-b xl:mt-28 lg:mt-10 mt-0 h-auto from-gray-100 to-gray-50 py-50' style={{
       background: 'linear-gradient(to bottom,transparent, rgba(31, 62, 102, 0.1) 2% ,rgba(1, 32, 68, 0.7) 37%, rgba(19, 35, 67, 0.6) 80%,    transparent)',
@@ -20,13 +20,13 @@ const AboutSection = () => {
       {/* <div className='overlay'></div> */}
       <div className='xl:container xl:mx-auto z-50 relative flex xl:flex-row flex-col space-x-8'>
         <div className='xl:w-1/2 w-full'>
-          <div className='p-0 sm:p-5 text-white text-center mb-10 w-5/6 mx-auto' >
+          <div className='p-0 sm:p-5 text-white text-center mb-10 w-6/7 mx-auto' >
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: false }}
-              className={`${rasingFont.className} text-4xl sm:text-5xl lg:text-6xl font-bold  `}
+              className={`${inter.className} text-4xl sm:text-5xl lg:text-6xl font-extrabold  text-left  `}
             >
               {t("title")}
             </motion.h1>

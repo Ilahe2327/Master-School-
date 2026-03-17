@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -33,13 +35,16 @@ const NavbarSection = () => {
   const t = useTranslations("Navbar")
   return (
     // <div className=''>
-    <div className={`flex h-auto  text-xl shadow-[4px 5px 2px #ffffff] font-extrabold text-white ${roboto.className} rounded-b-4xl `}>
-      <div className='container mx-auto flex justify-evenly items-center '>
-        <div className="fixed inset-0 -z-10" />
+    <div className={`flex absolute  mx-auto z-1000 h-auto  text-xl shadow-[4px 5px 2px #ffffff] font-extrabold  w-full text-white ${roboto.className} rounded-b-4xl `} >
+      <div className='h-auto mx-auto fixed w-full flex justify-evenly items-center ' style={{
+        backgroundColor: '#12213B',
+        opacity: '0.9'
+      }}>
+        {/* <div className="fixed inset-0 -z-10" /> */}
         <div className='hidden lg:flex w-3/8 space-x-10 justify-center items-center'>
-          <Link href={'#hero'} className={`text-white font-semibold ${roboto.className} transition-text-shadow duration-500 hover:text-shadow-[1px_1px_2px_#ffffff]
+          <Link href='/' className={`text-white font-semibold ${roboto.className} transition-text-shadow duration-500 hover:text-shadow-[1px_1px_2px_#ffffff]
                 hover-underline
-                `}>{t("home")}</Link>
+                `}>{t("home")} </Link>
           <Link href={'#aboutSection'} className={`text-white font-semibold ${roboto.className} transition-text-shadow duration-500 hover:text-shadow-[1px_1px_2px_#ffffff]
                 hover-underline
                 `}>{t('about')}</Link>
@@ -47,12 +52,12 @@ const NavbarSection = () => {
                 hover-underline
                 `}>{t("services")}</Link>
         </div>
-        <div className='lg:w-1/8 w-full container flex mx-5 justify-between items-center py-1'>
-          <Image src={'/masterschool.png'}
+        <div className='lg:w-1/8 w-full container flex mx-5 justify-between items-center '>
+          <Image src={'/logo.png'}
             alt='Master School Icon'
             width={599}
             height={416}
-            className='lg:w-[230px] w-[220px] lg:h-[130px] h-[130px]'
+            className='lg:w-[240px] sm:w-[220px] lg:h-[108px] sm:h-[130px] w-[150px] h-[100px]'
           />
           <MobileMenu />
         </div>

@@ -15,8 +15,11 @@ import BackgroundWrapper from "@/components/layout/BackgroundWrapper";
 
 export default function Home() {
   return (
-    <><BackgroundWrapper />
-      <HeroSection />
+    <>
+    {/* <BackgroundWrapper /> */}
+       <div className="relative">
+         <HeroSection />
+       </div>
       <AboutSection />
       <ServicesSection />
       <TeamSection />

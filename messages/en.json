@@ -52,7 +52,8 @@
   },
   "branches": {
     "title": "Our Branches",
-    "description": "We provide services at various points in the city"
+    "description": "We provide services at various points in the city",
+    "unvan": "Address"
   },
   "filialDetail": {
     "filiali": "Branch",

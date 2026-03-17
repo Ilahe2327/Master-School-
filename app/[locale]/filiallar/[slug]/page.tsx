@@ -29,7 +29,7 @@ const FilialDetail = ({ params }: BranchDetailProps) => {
     const t = useTranslations('filialDetail')
     return (
         <>
-            <div className='flex flex-col container mx-auto w-full text-taupe-900'>
+            <div className='flex relative flex-col top-52 container mx-auto w-full text-taupe-900'>
                 <div className={`${inter.className} flex flex-col my-20 items-center justify-center gap-5`}>
                     <h1 className='text-6xl md:text-7xl font-extrabold'>{branchDetail.title[locale]} {t('filiali')}</h1>
                     <p className='flex text-black gap-1'><MapPin />{t('masterSchool')}</p>

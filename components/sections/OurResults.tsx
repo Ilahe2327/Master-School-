@@ -75,7 +75,9 @@ const OurResults = () => {
               <DialogTrigger asChild>
                 <Button onClick={() => setOpen(true)} variant={'link'} className="float-right mb-5 font-bold bg-white cursor-pointer ">{t('button')}</Button>
               </DialogTrigger>
-              <DialogContent className="w-[95vw]  p-6" >
+              <DialogContent className="w-[95vw] p-6" style={{
+                zIndex:'1007'
+              }} >
                 <DialogHeader className="w-full">
                   <DialogTitle className={`${inter.className} text-2xl md:text-3xl lg:text-4xl text-center font-bold`}>{t("title")}</DialogTitle>
                   <DialogDescription asChild>

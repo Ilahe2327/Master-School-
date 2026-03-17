@@ -52,7 +52,8 @@
     },
     "branches": {
         "title": "Filiallarımız",
-        "description": "Şəhərin müxtəlif nöqtələrində sizə xidmət göstəririk"
+        "description": "Şəhərin müxtəlif nöqtələrində sizə xidmət göstəririk",
+        "unvan":"Ünvan : "
     },
     "filialDetail": {
         "filiali": "Filialı",

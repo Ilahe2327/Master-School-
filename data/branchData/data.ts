@@ -193,7 +193,7 @@ export const branches: Filial[] = [
             { id: 3, image: '/filial/28may/image3.jpeg', width: 720, height: 1280 }
         ],
         lat: 40.37739918590648,
-        lng: 49.85407045458089
+        lng: 49.85407045458089,
     },
     {
         slug: 'Elmler',

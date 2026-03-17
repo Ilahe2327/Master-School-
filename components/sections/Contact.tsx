@@ -181,7 +181,7 @@ const ContactPage = () => {
                         {...register("name")}
                         type="text"
                         placeholder={t('name')}
-                        className="border p-3 w-full"
+                        className="border-2 border-[#f5f5f5] rounded-lg p-3 w-full outline-none focus:border-[#53a1fb] focus:ring-2 focus:ring-[#53a1fb]/30 transition-all duration-200 bg-transparent text-white placeholder:text-gray-300"
                       />
                       {errors.name && (
                         <p className={`${inter.className} text-[#ff1c1c] text-bold text-left text-xl`}>{errors.name.message}</p>
@@ -194,7 +194,7 @@ const ContactPage = () => {
                         {...register("lastName")}
                         type="text"
                         placeholder={t('lastName')}
-                        className="border p-3 w-full"
+                        className="border-2 border-[#f5f5f5] rounded-lg p-3 w-full outline-none focus:border-[#53a1fb] focus:ring-2 focus:ring-[#53a1fb]/30 transition-all duration-200 bg-transparent text-white placeholder:text-gray-300"
                       />
                       {errors.name && (
                         <p className={`${inter.className} text-[#ff1c1c] text-bold text-left text-xl`}>{errors.name.message}</p>
@@ -210,7 +210,7 @@ const ContactPage = () => {
                       {...register("email")}
                       type="email"
                       placeholder={`${t('email')}*`}
-                      className="border p-3 w-full"
+                      className="border-2 border-[#f5f5f5] rounded-lg p-3 w-full outline-none focus:border-[#53a1fb] focus:ring-2 focus:ring-[#53a1fb]/30 transition-all duration-200 bg-transparent text-white placeholder:text-gray-300"
                     />
                     {errors.email && (
                       <p className={`${inter.className} text-[#ff1c1c] text-bold text-left text-xl`}>{errors.email.message}</p>
@@ -225,7 +225,7 @@ const ContactPage = () => {
                       {...register("bugTitle")}
                       type="text"
                       placeholder={t('bugTitle')}
-                      className="border p-3 w-full"
+                      className="border-2 border-[#f5f5f5] rounded-lg p-3 w-full outline-none focus:border-[#53a1fb] focus:ring-2 focus:ring-[#53a1fb]/30 transition-all duration-200 bg-transparent text-white placeholder:text-gray-300"
                     />
                     {errors.bugTitle && (
                       <p className={`${inter.className} text-[#ff1c1c] text-bold text-left text-xl`}>{errors.bugTitle.message}</p>
@@ -239,9 +239,9 @@ const ContactPage = () => {
                   <div className="flex- flex-col w-full">
                     <textarea
                       {...register("bugDescription")}
-                      placeholder={t('bugDescription')}
+                      placeholder={`${t('bugDescription')}*`}
                       rows={5}
-                      className="border p-3 w-full"
+                      className="border-2 border-[#f5f5f5] rounded-lg p-3 w-full outline-none focus:border-[#53a1fb] focus:ring-2 focus:ring-[#53a1fb]/30 transition-all duration-200 bg-transparent text-white placeholder:text-gray-300"
                     />
                     {errors.bugDescription && (
                       <p className={`${inter.className} text-[#ff1c1c] text-bold text-left text-xl`}>{errors.bugDescription.message}</p>
@@ -252,7 +252,7 @@ const ContactPage = () => {
               </div>
               <div className="flex justify-end w-full space-x-2">
                 <Button
-                  className={`cursor-pointer text-[#] p-5 text-blue-900  bg-white ${roboto.className}`}
+                  className={`cursor-pointer p-5 text-blue-900  bg-white ${roboto.className}`}
                   type="button"
                   onClick={() => reset()}
                 >

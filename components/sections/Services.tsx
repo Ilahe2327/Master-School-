@@ -70,14 +70,14 @@ const ServicesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false }}
-          className='md:text-7xl text-4xl sm:text-5xl font-black p-2'
+          className='md:text-7xl text-4xl  sm:text-5xl font-black p-2'
           style={{
-            background: 'radial-gradient(circle, #091057, #070F2B, #091057, #091057)',
-            backgroundSize: '200% auto',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            animation: 'textShine 6s linear infinite'  // burda sadəcə animation timing
+            // background: 'radial-gradient(circle, #091057, #070F2B, #091057, #091057)',
+            // backgroundSize: '200% auto',
+            // WebkitBackgroundClip: 'text',
+            // WebkitTextFillColor: 'transparent',
+            // backgroundClip: 'text',
+            // animation: 'textShine 6s linear infinite'  // burda sadəcə animation timing
           }}
         >
           {t("title")}
@@ -142,7 +142,7 @@ function GlassCard({ card }: GlassCardProps) {
         cursor: "pointer",
         transition: "all 1s cubic-bezier(0.23, 1, 0.32, 1)",
         transform: hovered ? "translateY(-12px) scale(1.02)" : "translateY(0) scale(1)",
-        boxShadow: hovered ? `0 30px 60px ${card.color}33` : "0 4px 20px rgba(0,0,0,0.3)",
+        boxShadow: hovered ? `0 40px 60px ${card.color}77` : "0 4px 20px rgba(0,0,0,0.3)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
@@ -162,7 +162,7 @@ function GlassCard({ card }: GlassCardProps) {
         opacity: hovered ? 1 : 0,
         transition: "all 0.4s cubic-bezier(0.23, 1, 0.32, 1)",
       }}>
-        <p style={{ color: "rgba(255,255,255,0.7)", fontSize: 13, lineHeight: 1.7, margin: 0, minHeight: hovered ? 90 : 0 }}>
+        <p style={{ color: "rgba(255,255,255,0.7)", fontSize: 15, lineHeight: 1.7, margin: 0, minHeight: hovered ? 90 : 0 }} className={`${inter.className} `}>
           {card.desc}
         </p>
       </div>
